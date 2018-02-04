@@ -1,14 +1,33 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Navi Contacts
     </ion-title>
+
+    <ion-buttons end>
+      <button (click)="addContact()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+    <ion-list-header>
+      Contacts
+    </ion-list-header>
+    <ion-item *ngFor="let contact of contacts">
+      <h1>{{ contact.firstName }} {{ contact.lastName }}</h1>
+      <p *ngIf="contact.email">{{ contact.email }}</p>
+      <p *ngIf="contact.phoneMobile">{{ contact.phoneMobile }} (m)</p>
+      <p *ngIf="contact.phoneWork">{{ contact.phoneWork }} (w)</p>
+      <ion-buttons>
+        <button (click)="deleteContact(contact.id)">
+          <ion-icon name="remove-circle"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
 </ion-content>
