@@ -48,4 +48,5 @@ export class ContactService {
   createContact(contact: Contact) {
     this.contactsCollectionRef.add(contact);
   }
+
 }

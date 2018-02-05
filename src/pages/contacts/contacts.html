@@ -1,0 +1,37 @@
+<!--
+  Generated template for the ContactsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Contacts</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      <span>Contacts</span>
+      <ion-buttons end>
+        <button (click)="addContact()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-list-header>
+    <ion-item *ngFor="let contact of contacts">
+      <h1>{{ contact.firstName }} {{ contact.lastName }}</h1>
+      <p *ngIf="contact.email">{{ contact.email }}</p>
+      <p *ngIf="contact.phoneMobile">{{ contact.phoneMobile }} (m)</p>
+      <p *ngIf="contact.phoneWork">{{ contact.phoneWork }} (w)</p>
+      <ion-buttons>
+        <button (click)="deleteContact(contact.id)">
+          <ion-icon name="remove-circle"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -13,6 +13,7 @@ import { credentials } from './config';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { ManagePageModule } from '../pages/manage/manage.module';
 
 import { ContactService } from './api/services/contact.service';
 
@@ -27,6 +28,7 @@ import { ContactService } from './api/services/contact.service';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     BrowserModule,
+    ManagePageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
