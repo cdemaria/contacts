@@ -41,10 +41,22 @@ export class ContactsPage {
       lastName: 'Springsteen',
       email: 'bspringsteen@rock.org'
     });
+    // .then(() => {
+    //   console.log('Successfully created new contact');
+    // }).catch( (error) => {
+    //   console.log(error);
+    //   console.log(`Unable to create contact.  Please try again.`);
+    // });
   }
 
   deleteContact(id: string) {
     console.log('delete contact with id', id);
+    this.contactService.deleteContact(id).then(() => {
+      console.log(`Successfully deleted contact ${id}`);
+    }).catch( (error) => {
+      console.log(error);
+      console.log(`Unable to delete contact ${id}.  Please try again.`);
+    });
   }
 
 

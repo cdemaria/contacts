@@ -46,7 +46,11 @@ export class ContactService {
   }
 
   createContact(contact: Contact) {
-    this.contactsCollectionRef.add(contact);
+    return this.contactsCollectionRef.add(contact);
+  }
+
+  deleteContact(id: string) {
+    return this.contactsCollectionRef.doc(id).delete();
   }
 
 }
