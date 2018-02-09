@@ -35,11 +35,17 @@ export class ContactsPage {
   }
 
   addContact() {
+    const firstNames = ['Bruce', 'Craig', 'Jackie', 'Annie', 'Ben', 'Bob', 'John', 'Fred', 'Alice', 'Ted', 'Derick', 'Bic'];
+    const lastNames = ['Springsteen', 'Jones', 'Holmes', 'Watson', 'Jackson', 'Hendrix', 'Minor', 'Washington', 'Lincoln', 'Smith', 'Mitchum'];
+
+    const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+    const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+
     console.log('add contact');
     this.contactService.createContact({
-      firstName: 'Bruce',
-      lastName: 'Springsteen',
-      email: 'bspringsteen@rock.org'
+      firstName: firstName,
+      lastName: lastName,
+      email: `${firstName.substring(0, 1).toLowerCase()}.${lastName.toLowerCase()}@navisite.com`
     });
     // .then(() => {
     //   console.log('Successfully created new contact');
