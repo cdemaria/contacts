@@ -17,18 +17,20 @@
     <ion-list-header>
       <span>Contacts</span>
       <ion-buttons end>
-        <button (click)="addContact()">
+        <button ion-button small (click)="addContact()">
           <ion-icon name="add"></ion-icon>
         </button>
       </ion-buttons>
     </ion-list-header>
     <ion-item *ngFor="let contact of contacts">
-      <h1>{{ contact.firstName }} {{ contact.lastName }}</h1>
-      <p *ngIf="contact.email">{{ contact.email }}</p>
-      <p *ngIf="contact.phoneMobile">{{ contact.phoneMobile }} (m)</p>
-      <p *ngIf="contact.phoneWork">{{ contact.phoneWork }} (w)</p>
+      <div class="contact-details">
+        <h1>{{ contact.firstName }} {{ contact.lastName }}</h1>
+        <p *ngIf="contact.email">{{ contact.email }}</p>
+        <p *ngIf="contact.phoneMobile">{{ contact.phoneMobile }} (m)</p>
+        <p *ngIf="contact.phoneWork">{{ contact.phoneWork }} (w)</p>
+      </div>
       <ion-buttons>
-        <button (click)="deleteContact(contact.id)">
+        <button (click)="deleteContact(contact.id)" ion-button small>
           <ion-icon name="remove-circle"></ion-icon>
         </button>
       </ion-buttons>

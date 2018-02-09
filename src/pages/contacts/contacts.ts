@@ -45,7 +45,7 @@ export class ContactsPage {
     this.contactService.createContact({
       firstName: firstName,
       lastName: lastName,
-      email: `${firstName.substring(0, 1).toLowerCase()}.${lastName.toLowerCase()}@navisite.com`
+      email: `${firstName.substring(0, 1).toLowerCase()}${lastName.toLowerCase()}@navisite.com`
     });
     // .then(() => {
     //   console.log('Successfully created new contact');
